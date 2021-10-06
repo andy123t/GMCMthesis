@@ -1,3 +1,9 @@
+%
+%   This is file `gmcmthesis.cls',
+% created by latexstudio.net
+% update by andy123t
+%
+
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{gmcmthesis}
               [2018/09/11 v2.3 update  gmcmthesis by  latexstudio.net]
@@ -44,11 +50,13 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \RequirePackage{amssymb}
 \RequirePackage{bm}
 % 设置颜色
-\RequirePackage{xcolor}
+\RequirePackage{color,xcolor}
 % 插入图片
 \RequirePackage{graphicx}
 % 表格
 \RequirePackage{tabularx,array}
+% 调整单元格格式
+\RequirePackage{makecell}
 %% 长表格
 \RequirePackage{longtable}
 %% booktabs 提供了\toprule 等命令.
@@ -64,29 +72,101 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 % 设置代码环境
 \RequirePackage{listings}
 
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
+% 设置代码环境
+\usepackage{listings,color}
 
-\lstset{
-  frame=tb,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  framerule=1pt,
-  rulecolor=\color{gray!35},
-  backgroundcolor=\color{gray!5},
-  basicstyle={\small\ttfamily},
-  numbers=none,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3,
-}
+% Matlab highlight color settings
+%\definecolor{mBasic}{RGB}{248,248,242}       % default
+\definecolor{mKeyword}{RGB}{0,0,255}          % bule
+\definecolor{mString}{RGB}{160,32,240}        % purple
+\definecolor{mComment}{RGB}{34,139,34}        % green
+\definecolor{mBackground}{RGB}{245,245,245}   % lightgrey
+\definecolor{mNumber}{RGB}{128,128,128}       % gray
+
+% Python highlight color settings
+%\definecolor{pBasic}{RGB}{248, 248, 242}     % default
+\definecolor{pKeyword}{RGB}{228,0,128}        % magenta
+\definecolor{pString}{RGB}{148,0,209}         % purple
+\definecolor{pComment}{RGB}{117,113,94}       % gray
+\definecolor{pIdentifier}{RGB}{166, 226, 46}  %
+\definecolor{pBackground}{RGB}{245,245,245}   % lightgrey
+\definecolor{pNumber}{RGB}{128,128,128}       % gray
+
+\lstnewenvironment{Matlab}[1]{
+\lstset{language=matlab,               % choose the language of the code
+  xleftmargin=20pt,
+  xrightmargin=20pt,
+  frame=tlbr,framesep=4pt,framerule=0.5pt, % sets the frame style
+  %frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20},
+  basicstyle=\small\fontspec{Courier New},
+  keywordstyle={\color{mKeyword}},     % sets color for keywords
+  stringstyle={\color{mString}},       % sets color for strings
+  commentstyle={\color{mComment}},     % sets color for comments
+  backgroundcolor=\color{gray!5},%\color{pBackground}, % choose the background color
+  rulecolor=\color{gray!50},
+  title=#1,                            % \lstname show the filename of files
+  keywords={break,case,catch,classdef,continue,else,elseif,end,for,
+  function,global,if,otherwise,parfor,persistent,return,spmd,switch,try,while},
+  showspaces=false,                    % show spaces adding particular underscores
+  showstringspaces=false,              % underline spaces within strings
+  showtabs=false,                      % show tabs within strings adding particular underscores
+  tabsize=4,                           % sets default tabsize to 2 spaces
+  captionpos=t,                        % sets the caption-position to bottom
+  breaklines=true,                     % sets automatic line breaking
+}}{}
+
+\lstnewenvironment{Python}[1]{
+\lstset{language=python,               % choose the language of the code
+  xleftmargin=20pt,
+  xrightmargin=20pt,
+  frame=single,framesep=4pt,framerule=0.5pt, % sets the frame style
+  %frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20},
+  basicstyle=\small\ttfamily,          % sets font style for the code
+  %basicstyle=\footnotesize\fontspec{Consolas},
+  keywordstyle=\color{pKeyword},       % sets color for keywords
+  stringstyle=\color{pString},         % sets color for strings
+  commentstyle=\color{pComment},       % sets color for comments
+  backgroundcolor=\color{gray!5},%\color{pBackground}, % choose the background color
+  rulecolor=\color{gray!50},
+  title=#1,                            % \lstnames how the filename of files
+  emph={format_string,eff_ana_bf,permute,eff_ana_btr},
+  emphstyle=\color{pIdentifier}
+  showspaces=false,                    % show spaces adding particular underscores
+  showstringspaces=false,              % underline spaces within strings
+  showtabs=false,                      % show tabs within strings adding particular underscores
+  tabsize=4,                           % sets default tabsize to 2 spaces
+  captionpos=t,                        % sets the caption-position to bottom
+  breaklines=true,                     % sets automatic line breaking
+}}{}
+
+% \RequirePackage{listings}
+% \definecolor{dkgreen}{rgb}{0,0.6,0}
+% \definecolor{gray}{rgb}{0.5,0.5,0.5}
+% \definecolor{mauve}{rgb}{0.58,0,0.82}
+% \lstset{
+%   xleftmargin=20pt,
+%   xrightmargin=20pt,
+%   frame=single,
+%   aboveskip=3mm,
+%   belowskip=3mm,
+%   showstringspaces=false,
+%   columns=flexible,
+%   framerule=0.5pt,
+%   framesep=4pt,
+%   rulecolor=\color{gray!35},
+%   backgroundcolor=\color{gray!5},
+%   basicstyle={\normalsize\ttfamily},
+%   numbers=none,
+%   numberstyle=\tiny\color{gray},
+%   keywordstyle=\color{blue},
+%   commentstyle=\color{dkgreen},
+%   stringstyle=\color{mauve},
+%   breaklines=true,
+%   breakatwhitespace=true,
+%   tabsize=3,
+% }
+
+
 % 首行缩进
 \RequirePackage{indentfirst}
 % 设置浮动体的标题
@@ -352,39 +432,45 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
   \global\let\and\relax
 }
 \def\ge@maketitle{%
-  \newpage
+  \clearpage
+  \thispagestyle{plain}%
+  \pdfbookmark[1]{封~面}{cover}
   \if@gmcm@preface
   \setcounter{page}{0}
   \def\thepage{0}
-  \thispagestyle{empty}%
+
  \begin{center}
  {\includegraphics{logo}}
 
-  \vskip2cm
+  \vskip1.5cm
  {\zihao{2} \gmcm@ges@string@contents \par}
  \end{center}
 
- \vskip2em
+ \vskip4em
 
  % \thispagestyle{gmcmheadings}
-   \renewcommand\arraystretch{1.3}
- \noindent \begin{tabularx}{\textwidth}{lX}
+ \renewcommand\arraystretch{1.5}
+ %\noindent 
+ \begin{tabularx}{\textwidth-40pt}{lX}
   \zihao{-2}\bfseries 学\qquad 校&\zihao{-2}\bfseries\gmcm@tokens@schoolname\\
-  \hline\\[-5pt]
+  \Xhline{1.2pt}\\
   \zihao{-2}\bfseries 参赛队号&\zihao{-2}\bfseries\gmcm@tokens@baominghao\\
-  \hline\\[-15pt]
-   \multirow{3}{*}{\zihao{-2}\bfseries 队员姓名}&\zihao{-2}\bfseries	 1. \gmcm@tokens@membera\hfill\null\\
+  \Xhline{1.2pt}\\[-15pt]
+   \multirow{3}{*}{\zihao{-2}\bfseries 队员姓名}&\zihao{-2}\bfseries   1. \gmcm@tokens@membera\hfill\null\\
    \cline{2-2}\\[-15pt]
-   	                           &\zihao{-2}\bfseries 2. \gmcm@tokens@memberb\hfill\null\\
+                               &\zihao{-2}\bfseries 2. \gmcm@tokens@memberb\hfill\null\\
    \cline{2-2}\\[-15pt]
-		                    &\zihao{-2}\bfseries 3.  \gmcm@tokens@memberc\hfill\null\\
-   \hline
+                        &\zihao{-2}\bfseries 3.  \gmcm@tokens@memberc\hfill\null\\
+   \Xhline{1.2pt}
   \end{tabularx}
+
 	\makenametitle
 	}
 
 \def\makenametitle{
-\newpage
+\clearpage
+\thispagestyle{plain}%
+\pdfbookmark[1]{标~题}{title}
 \setcounter{page}{1}
 \begin{center}
 %{\includegraphics[width=4cm]{logo}}
@@ -406,9 +492,10 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \setcounter{secnumdepth}{3}
 \def\@seccntformat#1{\csname the#1\endcsname\ \ }
 % 节标题格式, 居中, 使用\chinese命令修改计数器, \kern 使得数字和内容不至于太远
-\renewcommand\thesection{\arabic{section}.}
-\renewcommand\thesubsection{\arabic{section}\thinspace.\thinspace\arabic{subsection}}
-\renewcommand\thesubsubsection{\thesubsection\thinspace.\thinspace\arabic{subsubsection}}
+\newcommand{\thinskip}{\hskip 0.05em\relax}
+% \renewcommand\thesection{\arabic{section}\thinskip.}
+\renewcommand\thesubsection{\arabic{section}\thinskip.\thinskip\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection\thinskip.\thinskip\arabic{subsubsection}}
 \renewcommand\section{\@startsection{section}{1}{\z@}%
  	{2.5ex \@plus -1ex \@minus -.2ex}%
 	{2.3ex \@plus.2ex}%
@@ -459,11 +546,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	\vskip1ex
 	{\noindent\zihao{-4}\heiti\gmcm@cap@keywordsname：}~{\gmcm@tokens@keywords}
 	}
-% 定义附录	
-\renewcommand\appendix{\par
-	\setcounter{section}{0}%
-	 \setcounter{subsection}{0}%
-	\gdef\thesection{\appendixname\@Alph\c@section}}		
+
 
 \newcommand*\baominghao[1]{%
 	\renewcommand{\gmcm@tokens@baominghao}{#1}}
@@ -504,18 +587,57 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \newcommand\gmcm@ges@string@contents{\includegraphics{title}}
 
 
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+
+% % 字图与子标题
+% \RequirePackage{subcaption}
+\RequirePackage[titles]{tocloft}
+%\renewcommand{\cftdot}{$\cdot$}
+%\renewcommand{\cftsecdotsep}{1.5}
+\renewcommand{\cftsecdotsep}{4.5}
+\setlength{\cftbeforesecskip}{7pt}
+\setlength{\cftbeforesubsecskip}{3pt}
+%\setlength{\cftbeforesubsecskip}{5pt}
+\renewcommand{\cftsecfont}{\bfseries\zihao{-4}\heiti}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftsecdotsep}}
+\renewcommand{\cftsecaftersnumb}{\hskip.4em}
+
+% ----------- 设置新的生成目录命令 -------------
+\newcommand{\maketoc}{
+  \phantomsection
+  \pdfbookmark[1]{目~录}{contents}
+  \tableofcontents
+}
+
+\RequirePackage{titletoc}
+\RequirePackage[title,titletoc]{appendix}
+
+\newcommand*{\gmcm@cap@appendixname}{附录}
+\renewcommand*\appendixname{\gmcm@cap@appendixname}
+
+% 定义附录  
+% \let\oldappendix\appendix
+\renewcommand\appendix{\par
+  \setcounter{section}{0}%
+   \setcounter{subsection}{0}%
+  \gdef\thesection{\appendixname\@Alph\c@section}
+  %\gdef\thesubsection{\@Alph\c@section\thinskip.\thinskip\c@subsection}
+}
 
 
 %设置目录格式
 % 节的目录格式
-\titlecontents{section}[0pt]{\vspace{2mm}\bfseries\heiti}
-{\thecontentslabel\hskip.5em}{}{\titlerule*[0.5pc]{.}\contentspage}
-% 小节的目录格式
-\titlecontents{subsection}[30pt]{\songti}
-{\thecontentslabel\hskip.5em}{}{\titlerule*[0.5pc]{.}\contentspage}
+% \titlecontents{section}[0pt]{\vspace{2mm}\bfseries\heiti}
+% {\thecontentslabel\hskip.5em}{}{\titlerule*[0.5pc]{.}\contentspage}
+% % 小节的目录格式
+% \titlecontents{subsection}[30pt]{\songti}
+% {\thecontentslabel\hskip.5em}{}{\titlerule*[0.5pc]{.}\contentspage}
 
-\titlecontents{subsubsection}[55pt]{\songti}
-{\thecontentslabel\hskip.5em}{}{\titlerule*[0.5pc]{.}\contentspage}
+% \titlecontents{subsubsection}[55pt]{\songti}
+% {\thecontentslabel\hskip.5em}{}{\titlerule*[0.5pc]{.}\contentspage}
 
-\pagestyle{plain}
+% \pagestyle{plain}
+
 \endinput
