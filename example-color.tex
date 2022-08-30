@@ -1,8 +1,7 @@
 % !Mode:: "TeX:UTF-8"
 %!TEX program  = xelatex
 
-%\documentclass[bwprint,fontset=windows]{gmcmthesis}
-\documentclass[bwprint]{gmcmthesis}
+\documentclass[bwprint,fontset=windows]{gmcmthesis}
 
 \hypersetup{hidelinks}
 \usepackage[framemethod=TikZ]{mdframed}
@@ -126,7 +125,6 @@ frametitlerulewidth=.5pt, frametitlebackgroundcolor=gray!2,]
 \end{enumerate}
 
 
-
 \section{符号说明}
 
 \begin{table}[htp!]
@@ -136,45 +134,59 @@ frametitlerulewidth=.5pt, frametitlebackgroundcolor=gray!2,]
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{C}{>{\centering \arraybackslash}X}
 \newcolumntype{R}{>{\raggedright \arraybackslash}X}
-\begin{tabularx}{0.9\textwidth}{|P{1cm}|L|}
-  \hline %\toprule
-  符号    &   \quad 意义 \\
-  \hline %\midrule
+\begin{tabularx}{0.9\textwidth}{!{\color{color2}\vrule}P{2cm}!{\color{color2}\vrule}L!{\color{color2}\vrule}}
+  \arrayrulecolor{color2}\hline %\toprule
+  \rowcolor{color2}
+  \textbf{符号}    &   \quad \textbf{意义} \\
+  \arrayrulecolor{color2}\hline %\midrule
   %\rowcolor[gray]{0.90}
+  \rowcolor{color3}
   $ a $  &  符号1的意义    \\
-  \hline
+  \arrayrulecolor{color2}\hline
+  \rowcolor{color4}
   $ b $  &  符号2的意义    \\
-  \hline
+  \arrayrulecolor{color2}\hline
+  \rowcolor{color3}
   $ c $  &  符号3的意义符号3的意义    \\
-  \hline
+  \arrayrulecolor{color2}\hline
+  \rowcolor{color4}
   $ d $  &  符号4的意义    \\
-  \hline
+  \arrayrulecolor{color2}\hline
+  \rowcolor{color3}
   $ e $  &  符号5的意义     \\
-  \hline
+  \arrayrulecolor{color2}\hline
+  \rowcolor{color4}
   $ f $  &  符号6的意义符号6的意义    \\
-  \hline
+  \arrayrulecolor{color2}\hline
+  \rowcolor{color3}
   $ g $  &  符号7的意义     \\
-  \hline
+  \arrayrulecolor{color2}\hline
+  \rowcolor{color4}
   $ h $  &  符号8的意义     \\
-  \hline
+  \arrayrulecolor{color2}\hline
+  \rowcolor{color3}
   $ i $  &  符号9的意义符号9的意义     \\
-  \hline
-
+  \arrayrulecolor{color2}\hline
+  \rowcolor{color4}
   $ k $  &  符号10的意义     \\
-  \hline
+  \arrayrulecolor{color2}\hline
+  \rowcolor{color3}
   $ l $  &  符号11的意义    \\
-  \hline
+  \arrayrulecolor{color2}\hline
+  \rowcolor{color4}
   $ m $  &  符号12的意义    \\
-  \hline
+  \arrayrulecolor{color2}\hline
+  \rowcolor{color3}
   $ n $  &  符号13的意义    \\
-  \hline
+  \arrayrulecolor{color2}\hline
+  \rowcolor{color4}
   $ p $  &  符号14的意义    \\
-  \hline
+  \arrayrulecolor{color2}\hline
+  \rowcolor{color3}
   $ q $  &  符号15的意义    \\
-  \hline %\bottomrule
+  \arrayrulecolor{color2}\hline %\bottomrule
 \end{tabularx}
 \end{table}
-
 
 %\begin{tabularx}{\textwidth-18pt}{XXX}
 %\hline
@@ -240,7 +252,6 @@ output result
 %\end{table}
 
 三线表
-
 \begin{table}[!htp]
 \newcolumntype{L}{X}
 \newcolumntype{C}{>{\centering \arraybackslash}X}
@@ -270,17 +281,14 @@ output result
 \caption{某行业产量与生产费用的数据}%\label{}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 \newcolumntype{Z}{!{\vline}@{\color{white}\vrule width \doublerulesep}!{\vrule}}%自定义列格式(双线)
-\begin{tabularx}{0.94\textwidth}{c|c|YZc|c|Y}
-    \Xhline{0.9pt}
-	企业编号&	产量(台)&生产费用(万元)&企业编号&产量(台)&生产费用(万元)\\
-    \Xcline{1-3}{0.6pt}\Xcline{4-6}{0.6pt}
+\begin{tabularx}{0.94\textwidth}{c|c|YZc|c|Y}\Xhline{0.9pt}
+	企业编号&	产量(台)&生产费用(万元)&企业编号&产量(台)&生产费用(万元)\\\Xcline{1-3}{0.6pt}\Xcline{4-6}{0.6pt}
 	1&	40&	130&7&	84&	165\\
 	2&	42&	150&8&	100&	170\\
 	3&	50&	155&9&	116&	167\\
 	4&	55&	140&10&	125&	180\\
 	5&	65&	150&11&	130&	175\\
-	6&	78&	154&12&	140&	185\\
-    \Xhline{0.72pt}
+	6&	78&	154&12&	140&	185\\\Xhline{0.72pt}
 \end{tabularx}
 \end{table}
 
@@ -293,23 +301,39 @@ output result
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 \begin{tabularx}{0.9\textwidth}{|Y|Y|Y|}
   \hline
+  \rowcolor{color1}
   数据集1  &  数据集1 & 数据集2  \\
  \hline
+  \rowcolor[gray]{0.95}
   A问题1   & A问题1 &  A问题1     \\
   \hline
+  \rowcolor[gray]{0.9}
   503   &  503     & 163     \\
+  \rowcolor[gray]{0.95}
   294   &  200     & 114      \\
+  \rowcolor[gray]{0.9}
   91    &  80      & 8     \\
+  \rowcolor[gray]{0.95}
   607   &  237     & 309      \\
+  \rowcolor[gray]{0.9}
   540   &  170     & 305    \\
+  \rowcolor[gray]{0.95}
   250   &  278     & 123    \\
+  \rowcolor[gray]{0.9}
   340   &  369     & 45      \\
+  \rowcolor[gray]{0.95}
   277   &  214     & 160    \\
+  \rowcolor[gray]{0.9}
   B     &  397     & 92    \\
+  \rowcolor[gray]{0.95}
         &  B       & 93    \\
+  \rowcolor[gray]{0.9}
         &          & 61        \\
+  \rowcolor[gray]{0.95}
         &          & 292       \\
+  \rowcolor[gray]{0.9}
         &          & B         \\
+  \rowcolor[gray]{0.95}
 104861  & 103518   & 109342 \\
 \hline
 \end{tabularx}
@@ -319,23 +343,39 @@ output result
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 \begin{tabularx}{0.9\textwidth}{|Y|Y|Y|}
   \hline
+  \rowcolor{color1}
   数据集1  &  数据集1 & 数据集2  \\
   \hline
+  \rowcolor[gray]{0.95}
   A问题2  &  A问题2  & A问题2    \\
   \hline
+  \rowcolor[gray]{0.9}
    503    & 503     & 163  \\
+  \rowcolor[gray]{0.95}
   294    & 200     & 114   \\
+  \rowcolor[gray]{0.9}
    91     & 80     & 8   \\
+  \rowcolor[gray]{0.95}
    607    & 237     & 309   \\
+  \rowcolor[gray]{0.9}
    540    & 170    & 305  \\
+  \rowcolor[gray]{0.95}
    250    & 278    & 123  \\
+  \rowcolor[gray]{0.9}
    340    & 369     & 45   \\
+  \rowcolor[gray]{0.95}
    277    & 214    & 160  \\
+  \rowcolor[gray]{0.9}
   B      & 397   & 92 \\
+  \rowcolor[gray]{0.95}
         &  B     &  93      \\
+  \rowcolor[gray]{0.9}
          &         &  61      \\
+  \rowcolor[gray]{0.95}
         &         &   292     \\
+  \rowcolor[gray]{0.9}
         &         &   B     \\
+  \rowcolor[gray]{0.95}
  104917  &  103563  &109427 \\
 \hline
 \end{tabularx}
@@ -350,39 +390,43 @@ output result
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 \caption{问题3结果}
 \begin{tabularx}{0.9\textwidth}{|Y|Y|Y|Y|Y|Y|}
-  \hline %定义表格宽度
+\hline %定义表格宽度
+\rowcolor{color1}
   数据集1  &  数据集1  &  \multicolumn{2}{c|}{数据集2 (无问题点)}  & \multicolumn{2}{c|}{数据集2 (有问题点)} \\
-  \hline
+\hline
+\rowcolor[gray]{0.95}
   A问题3   & A问题3   &  \multicolumn{2}{c|}{A问题3}    &  \multicolumn{2}{c|}{A问题3}      \\
   \hline
+  \rowcolor[gray]{0.9}
   503      & 503     & 169      & 73      & 169     & 73   \\
-  \hline
+  \rowcolor[gray]{0.95}
   69       & 69      & 322      & 249     & 322     & 249   \\
-  \hline
+  \rowcolor[gray]{0.9}
   506      & 506      & 270     & 274     & 270     & 274   \\
-  \hline
+  \rowcolor[gray]{0.95}
   371      & 371      & 89      & 12      & 89      & 12   \\
-  \hline
+  \rowcolor[gray]{0.9}
   183      & 183      & 236     & 216     & 236     & 216  \\
-  \hline
+  \rowcolor[gray]{0.95}
   194      & 194      & 132     & 16      & 132     & 16   \\
-  \hline
+  \rowcolor[gray]{0.9}
   450      & 450      & 53      & 282     & 53      & 282   \\
-  \hline
+  \rowcolor[gray]{0.95}
   286      & 113      & 112     & 84      & 112     & 141  \\
-  \hline
+  \rowcolor[gray]{0.9}
   485      & 485      &  268    & 287     & 268     & 291 \\
-  \hline
+  \rowcolor[gray]{0.95}
  \red{B (9D)}~~     & 248      & 250     & 99      & 250     &161 \\
- \hline
+ \rowcolor[gray]{0.9}
    & \red{B (10D)}   & 243     & \red{B (21D)}   & 243    & \red{B (21D)} \\
-   \hline
+ \rowcolor[gray]{0.95}
     &          &         &         &         &       \\
-    \hline
+ \rowcolor[gray]{0.9}
   104861m  & 103518m  &         & 168924m  &         &161650m \\
 \hline
 \end{tabularx}
 \end{table}
+
 
 
 \subsection{图形}
@@ -403,6 +447,8 @@ output result
 \end{minipage}
 \end{figure}
 
+
+\clearpage
 这是一个算法流程图
 \begin{figure}[htp!]
 \centering
@@ -421,8 +467,8 @@ output result
 \end{figure}
 
 
-\clearpage
 \subsection{问题三分析}
+
 
 题目要求制作软件的意思就是客户给定折叠桌高度、桌面边缘线的形状大小和桌脚边缘线的大致形状，将这些信息输入程序就得到客户想要的桌子。我们在求解最优设计加工参数时，自行给定桌面边缘线形状（椭圆、相交圆等），桌脚边缘线形状，折叠桌高度，应用第二问的非线性规划模型，用MATLAB软件绘制折叠桌截面图，得到自己设计的创意平板折叠桌。
 
