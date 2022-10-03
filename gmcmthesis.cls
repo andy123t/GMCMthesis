@@ -1,12 +1,11 @@
 %
-%   This is file `gmcmthesis.cls',
+% This is file `gmcmthesis.cls',
 % created by latexstudio.net
 % update by andy123t
 %
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{gmcmthesis}
-              [2018/09/11 v2.3 update  gmcmthesis by  latexstudio.net]
+\ProvidesClass{gmcmthesis}[2022/07/10 v2.4 update by andy123t]
 %% Inital Code
 \newif\if@gmcm@bwprint\@gmcm@bwprintfalse
 \newif\if@gmcm@preface\@gmcm@prefacetrue
@@ -34,7 +33,7 @@
 \ExecuteOptions{colorprint}
 \ProcessOptions\relax
 %% Loading Class
-\LoadClass[a4paper,cs4size]{ctexart}
+\LoadClass[a4paper,zihao=-4]{ctexart}
 %% Loading Package
 \RequirePackage{ifxetex}
 \RequireXeTeX
