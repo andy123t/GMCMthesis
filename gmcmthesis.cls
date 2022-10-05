@@ -5,7 +5,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{gmcmthesis}[2022/07/10 v2.4 update by andy123t]
+\ProvidesClass{gmcmthesis}[2022/10/05 v2.4 update by andy123t]
 %% Inital Code
 \newif\if@gmcm@bwprint\@gmcm@bwprintfalse
 \newif\if@gmcm@preface\@gmcm@prefacetrue
@@ -432,11 +432,12 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 }
 \def\ge@maketitle{%
   \clearpage
-  \thispagestyle{plain}%
+  % \thispagestyle{plain}%
+  \thispagestyle{empty}%
   \pdfbookmark[1]{封~面}{cover}
   \if@gmcm@preface
-  \setcounter{page}{0}
-  \def\thepage{0}
+  % \setcounter{page}{0}
+  % \def\thepage{0}
 
  \begin{center}
  {\includegraphics{logo}}
