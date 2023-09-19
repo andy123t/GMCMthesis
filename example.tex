@@ -40,8 +40,8 @@
 %===================== 建模论文题目 ======================
 
 \title{全国研究生数学建模竞赛论文标题}
-\baominghao{\hspace{6em} 20220900001} %参赛队号
-\schoolname{\hspace{5.8em} 上海师范大学}%学校名称
+\baominghao{\hspace{6em} 20230900001} %参赛队号
+\schoolname{\hspace{5.8em} 学校名称填写} %学校名称
 \membera{\hspace{6em} 成员A} %队员A
 \memberb{\hspace{6em} 成员B} %队员B
 \memberc{\hspace{6em} 成员C} %队员C
@@ -51,10 +51,10 @@
 
 \begin{document}
 
- %生成标题
- \maketitle
+%生成标题
+\maketitle
 
- %填写摘要
+%填写摘要
 \begin{abstract}
 本模板是为全国研究生数学建模竞赛编写的 \LaTeX{} 模板, 旨在让大家专注于
 论文的内容写作, 而不用花费过多精力在格式的定制和调整上. 本手册是相应的参考, 其
@@ -62,23 +62,21 @@
 定的 \LaTeX{} 的使用经验, 至少要会使用 ctex 宏包的一些功能, 比如调节字距或修改字体
 大小等等.
 
-
- \begin{mdframed} [%
-	roundcorner=5pt,
-	linecolor=gray!50,
-	outerlinewidth=0.5pt,
-	middlelinewidth=0.3pt, backgroundcolor=gray!2,
-innertopmargin=\topskip, frametitle={2021年格式变化说明},
+\begin{mdframed}[%
+roundcorner=5pt,linecolor=gray!50,outerlinewidth=0.5pt,
+middlelinewidth=0.3pt,backgroundcolor=gray!2,
+innertopmargin=\topskip, frametitle={2023年格式变化说明},
 frametitlefont= \bfseries,frametitlerule=true,frametitlealignment =\raggedright\noindent,
 frametitlerulewidth=.5pt, frametitlebackgroundcolor=gray!2,]
 今年的格式变化如下：
 \begin{enumerate}
-\item 论文第一页为标识替换。
+\item 论文第一页标识替换；
+\item 修复首页页码；
+\item 调整摘要、标题、关键词和浮动体标题等字体。
 \end{enumerate}
-
 \end{mdframed}
 
-这是研究生报名官方网站，点击\href{https://cpipc.chinadegrees.cn}{\fbox{这里}}进入。
+这是研究生报名官方网站，点击\href{https://cpipc.acge.org.cn/}{\fbox{这里}}进入。
 
 
 \keywords{折叠桌\quad  曲线拟合\quad   非线性优化模型\quad  受力分析}
@@ -241,25 +239,53 @@ output result
 
 三线表
 
+%\begin{table}[!htp]
+%\renewcommand\arraystretch{1.0} %定义表格高度
+%\newcolumntype{L}{X}
+%\newcolumntype{C}{>{\centering \arraybackslash}X}
+%\newcolumntype{R}{>{\raggedright \arraybackslash}X}
+%\centering
+%\caption{某校学生升高体重样本}
+%\label{tab2:heightweight}
+%\begin{tabularx}{0.9\textwidth}{CC|CC}
+%   \toprule
+%	\multicolumn{2}{c}{Numbers} &身高&体重\\
+%	\midrule
+%	1&14&156&42\\
+%	2&16&158&45\\
+%	3&14&162&48\\
+%	4&15&163&50\\
+%    \midrule
+%    %\cmidrule{2-4}
+%	平均&15&159.75&46.25\\
+%	\bottomrule
+%\end{tabularx}
+%\end{table}
+
+
+
 \begin{table}[!htp]
+\renewcommand\arraystretch{1.0} %定义表格高度
 \newcolumntype{L}{X}
 \newcolumntype{C}{>{\centering \arraybackslash}X}
 \newcolumntype{R}{>{\raggedright \arraybackslash}X}
 \centering
 \caption{某校学生升高体重样本}
 \label{tab2:heightweight}
-\begin{tabularx}{0.9\textwidth}{CCCC}
-   \toprule
-	序号&年龄&身高&体重\\
-	\midrule
-	1&14&156&42\\
-	2&16&158&45\\
+\begin{tabularx}{0.9\textwidth}{|C|C|C|C|}
+   \Xhline{2\arrayrulewidth}
+	\multicolumn{2}{|c|}{Numbers}  &身高&体重\\
+	\Xhline{2\arrayrulewidth}
+	\multirow{2}{*}{Item} &14&156&42\\
+    \cline{2-4}
+	  &16&158&45\\
+    \hline
 	3&14&162&48\\
+    \hline
 	4&15&163&50\\
-    \midrule
     %\cmidrule{2-4}
 	平均&15&159.75&46.25\\
-	\bottomrule
+	\Xhline{2\arrayrulewidth}
 \end{tabularx}
 \end{table}
 
@@ -406,7 +432,7 @@ output result
 这是一个算法流程图
 \begin{figure}[htp!]
 \centering
-\includegraphics[width=.55\textwidth]{1.png}
+\includegraphics[width=.55\textwidth]{fig.png}
 \caption{算法流程图}
 \end{figure}
 

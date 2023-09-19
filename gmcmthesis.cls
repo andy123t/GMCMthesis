@@ -5,7 +5,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{gmcmthesis}[2022/10/05 v2.4 update by andy123t]
+\ProvidesClass{gmcmthesis}[2023/09/19 v2.4 update by andy123t]
 %% Inital Code
 \newif\if@gmcm@bwprint\@gmcm@bwprintfalse
 \newif\if@gmcm@preface\@gmcm@prefacetrue
@@ -359,13 +359,13 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \captionsetup[figure]{%
 	format=hang,   % 标题从第二行开始都有缩进, 应该和 justification=raggedright 的效果一样.
 	labelsep=quad, % 分隔符是一个空格
-	font={song,minusfour,bf}, % 图的字体, 宋体小四
+	font={song,minusfour}, % 图的字体, 宋体小四
 	position=bottom % position=bottom, 不代表标题放在下面, 标题仍放在你放\caption的位置.
 }
 \captionsetup[table]{%
 	format=hang,   % 标题从第二行开始都有缩进, 应该和 justification=raggedright 的效果一样.
 	labelsep=quad, % 分隔符是一个空格
-	font={song,minusfour,bf}, % 表的字体, 宋体小四
+	font={song,minusfour}, % 表的字体, 宋体小四
 	position=top % position=bottom, 不代表标题放在下面, 标题仍放在你放\caption的位置.
 }
 % 列表环境设置
@@ -432,12 +432,12 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 }
 \def\ge@maketitle{%
   \clearpage
-  % \thispagestyle{plain}%
-  \thispagestyle{empty}%
+  %\thispagestyle{plain}%
+  \thispagestyle{empty}
   \pdfbookmark[1]{封~面}{cover}
   \if@gmcm@preface
-  % \setcounter{page}{0}
-  % \def\thepage{0}
+  %\setcounter{page}{0}
+  %\def\thepage{0}
 
  \begin{center}
  {\includegraphics{logo}}
@@ -479,11 +479,14 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 
 \vskip0.6cm%
 
-\begin{center}\begin{tabularx}{.95\textwidth}{@{}lX@{}}
-{\zihao{4} 题\qquad 目} &\hfill\zihao{3}\heiti \@title\hfill\null\\
+\begin{center}
+\begin{tabularx}{.95\textwidth}{@{}lX@{}}
+{\zihao{-2}\lishu 题\quad 目: } &\hfill\zihao{3}\heiti \@title\hfill\null\\
 \cline{2-2}
 \end{tabularx}
 \end{center}
+
+\vskip0.2cm%
 }
 
 
@@ -519,14 +522,14 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Define new environment and command
-%% 摘要两个字设置为 4 号.
+%% 摘要两个字设置为 -2 号.
 %% 定义摘要环境
 \renewenvironment{abstract}{%
 \if@twocolumn
 		\section*{\gmcm@cap@abstractname}%
 	\else
 	 \begin{center}%
-	{\zihao{3}\lishu\gmcm@cap@abstractname\vspace{\z@}}%
+	{\zihao{-2}\lishu\gmcm@cap@abstractname\vspace{\z@}}%
 	 \end{center}%
  	 \quotation
 	\fi}
@@ -544,7 +547,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	\renewcommand{\gmcm@tokens@keywords}{#1}
 	\par
 	\vskip1ex
-	{\noindent\zihao{-4}\heiti\gmcm@cap@keywordsname：}~{\gmcm@tokens@keywords}
+	{\noindent\zihao{-3}\lishu\gmcm@cap@keywordsname：}~{\gmcm@tokens@keywords}
 	}
 
 
@@ -577,21 +580,20 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \newcommand*{\gmcm@cap@proof}{证明}
 \newcommand*{\gmcm@cap@solution}{解}
  %%%  中文标题名称
-\newcommand*{\gmcm@cap@abstractname}{摘\qquad\quad 要： }
+\newcommand*{\gmcm@cap@abstractname}{摘\quad 要： }
  %%%  中文关键字
-\newcommand*{\gmcm@cap@keywordsname}{关键字}
+\newcommand*{\gmcm@cap@keywordsname}{关键词}
 
- %%%常量
+% 常量
 
 %\newcommand\gmcm@ges@string@contents{“华为杯”第十五届全国研究生\par 数学建模竞赛}
 \newcommand\gmcm@ges@string@contents{\includegraphics{title}}
-
 
 \renewcommand{\thetable}{\arabic{section}.\arabic{table}}
 \renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
 \renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
 
-% % 字图与子标题
+% 字图与子标题
 % \RequirePackage{subcaption}
 \RequirePackage[titles]{tocloft}
 %\renewcommand{\cftdot}{$\cdot$}
@@ -627,7 +629,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 }
 
 
-%设置目录格式
+% 设置目录格式
 % 节的目录格式
 % \titlecontents{section}[0pt]{\vspace{2mm}\bfseries\heiti}
 % {\thecontentslabel\hskip.5em}{}{\titlerule*[0.5pc]{.}\contentspage}
