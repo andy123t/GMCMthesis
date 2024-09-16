@@ -192,14 +192,6 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 % 页面布局
 \geometry{top=30.0mm,bottom=25.0mm,left=22.5mm,right=22.5mm,headsep=8mm}
 \renewcommand*{\baselinestretch}{1.38}
-% 修改tabular 环境, 设置表格中的行间距为正文行间距.
-\let\gmcm@oldtabular\tabular
-\let\gmcm@endoldtabular\endtabular
-\renewenvironment{tabular}%
-	{\bgroup%
-	\renewcommand{\arraystretch}{1.38}%
-	\gmcm@oldtabular}%
-	{\gmcm@endoldtabular\egroup}
 % 每行缩进两个汉字
 \setlength\parindent{2em}
 % 设置字体

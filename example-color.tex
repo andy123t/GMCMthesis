@@ -13,6 +13,8 @@
 %\setcounter{tocdepth}{3}   % 调整目录深度
 
 \usepackage{subfig}
+\usepackage{siunitx}
+
 \usepackage{colortbl}
 \definecolor{color1}{rgb}{0.78,0.88,0.99}
 \definecolor{color2}{rgb}{0.36,0.62,0.84}
@@ -39,7 +41,7 @@
 %===================== 建模论文题目 ======================
 
 \title{全国研究生数学建模竞赛论文标题}
-\baominghao{\hspace{6em} 20230900001} %参赛队号
+\baominghao{\hspace{6em} 20240900001} %参赛队号
 \schoolname{\hspace{5.8em} 学校名称填写} %学校名称
 \membera{\hspace{6em} 成员A} %队员A
 \memberb{\hspace{6em} 成员B} %队员B
@@ -64,14 +66,14 @@
 \begin{mdframed}[%
 roundcorner=5pt,linecolor=gray!50,outerlinewidth=0.5pt,
 middlelinewidth=0.3pt,backgroundcolor=gray!2,
-innertopmargin=\topskip, frametitle={2023年格式变化说明},
+innertopmargin=\topskip, frametitle={2024年格式变化说明},
 frametitlefont= \bfseries,frametitlerule=true,frametitlealignment =\raggedright\noindent,
 frametitlerulewidth=.5pt, frametitlebackgroundcolor=gray!2,]
 今年的格式变化如下：
 \begin{enumerate}
-\item 论文第一页标识替换；
-\item 修复首页页码；
-\item 调整摘要、标题、关键词和浮动体标题等字体。
+\item 论文前两页 Logo 和 Title 替换；
+\item 优化表格实例；
+\item 修复若干 bug。
 \end{enumerate}
 \end{mdframed}
 
@@ -102,10 +104,10 @@ frametitlerulewidth=.5pt, frametitlebackgroundcolor=gray!2,]
 
 \noindent 围绕创意平板折叠桌的动态变化过程、设计加工参数，本文依次提出如下问题：
 
-\textbf{问题一：} 给定长方形平板尺寸 （$120 cm \times 50 cm \times 3 cm$），每根木条宽度（2.5 cm），连接桌腿木条的钢筋的位置，折叠后桌子的高度（53 cm）。要求建立模型描述此折叠桌的动态变化过程，并在此基础上给出此折叠桌的设计加工参数和桌脚边缘线的数学描述。
+\textbf{问题一：} 给定长方形平板尺寸 （$\SI{120}{cm} \times \SI{50}{cm} \times \SI{3}{cm}$），每根木条宽度（\SI{2.5}{cm}），连接桌腿木条的钢筋的位置，折叠后桌子的高度（\SI{53}{cm}）。要求建立模型描述此折叠桌的动态变化过程，并在此基础上给出此折叠桌的设计加工参数和桌脚边缘线的数学描述。
 
 
-\textbf{问题二：} 折叠桌的设计应做到产品稳固性好、加工方便、用材最少。对于任意给定的折叠桌高度和圆形桌面直径的设计要求，讨论长方形平板材料和折叠桌的最优设计加工参数，例如，平板尺寸、钢筋位置、开槽长度等。对于桌高70 cm，桌面直径80 cm的情形，确定最优设计加工参数。
+\textbf{问题二：} 折叠桌的设计应做到产品稳固性好、加工方便、用材最少。对于任意给定的折叠桌高度和圆形桌面直径的设计要求，讨论长方形平板材料和折叠桌的最优设计加工参数，例如，平板尺寸、钢筋位置、开槽长度等。对于桌高 \SI{70}{cm}，桌面直径 \SI{80}{cm} 的情形，确定最优设计加工参数。
 
 
 \textbf{问题三：} 给出软件设计的数学模型，可以根据客户任意设定的折叠桌高度、桌面边缘线的形状大小和桌脚边缘线的大致形状，给出所需平板材料的形状尺寸和切实可行的最优设计加工参数，使得生产的折叠桌尽可能接近客户所期望的形状，并根据所建立的模型给出几个设计的创意平板折叠桌。要求给出相应的设计加工参数，画出至少8张动态变化过程的示意图。
@@ -215,15 +217,15 @@ output result
 \begin{algorithmic}[1]
 \State some description 算法介绍 % \State 后写一般语句
 \For{condition} % For 语句，需要和EndFor对应
-　　\State ...
-　　\If{condition} % If 语句，需要和EndIf对应
-　　　　\State ...
-　　\Else
-　　　　\State ...
-　　\EndIf
+  \State ...
+  \If{condition} % If 语句，需要和EndIf对应
+    \State ...
+  \Else
+    \State ...
+  \EndIf
 \EndFor
 \While{condition} % While语句，需要和EndWhile对应
-　　\State ...
+  \State ...
 \EndWhile
 \State \Return result
 \end{algorithmic}
@@ -236,59 +238,68 @@ output result
 
 \subsection{表格}
 
-%\begin{table}[!htbp]
-%    \caption{标准三线表格}\label{tab:001} \centering
-%    \begin{tabular}{ccccc}
-%        \toprule%[1.5pt]
-%        $D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
-%        \midrule%[1pt]
-%        5 & 269.8 & 0.000674 & 1.79 & 0.04089\\
-%        10 & 421.0 & 0.001035 & 3.59 & 0.04089\\
-%        20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
-%        \bottomrule%[1.5pt]
-%    \end{tabular}
-%\end{table}
+使用 tabular 环境, 如下表格: 表~\ref{tab:foo}. 通过 \verb|autoref| 引用表格: \autoref{tab:foo}.
+
+这里可使用命令 \verb|\tabcolsep| 和 \verb|\arraystretch| 分别控制列间距和行间距.
+
+\begin{table}[htp!]
+\centering
+\setlength{\tabcolsep}{12pt}  % 6pt standard
+\renewcommand{\arraystretch}{1.2}
+\caption{学术活动安排样例}
+\label{tab:foo}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{日期}  & \textbf{地点} & \textbf{活动名称} & \textbf{备注} \\ \hline
+2024年8月1日      & 上海       & 学术研讨会      & 主题：人工智能 \\ \hline
+2024年8月15日    & 北京       & 学术交流会      & 重点：数学建模 \\ \hline
+2024年9月1日      & 深圳       & 研究研讨会      & 主题：数据科学 \\ \hline
+2024年10月15日  & 广州       & 创新论坛         & 重点：科技创新 \\ \hline
+\end{tabular}
+\end{table}
+
+
+\clearpage
 
 三线表
-\begin{table}[!htp]
+\begin{table}[htp!]
 \newcolumntype{L}{X}
 \newcolumntype{C}{>{\centering \arraybackslash}X}
 \newcolumntype{R}{>{\raggedright \arraybackslash}X}
 \centering
 \caption{某校学生升高体重样本}
-\label{tab2:heightweight}
+\label{tab:heightweight}
 \begin{tabularx}{0.9\textwidth}{CCCC}
-   \toprule
-	序号&年龄&身高&体重\\
-	\midrule
-	1&14&156&42\\
-	2&16&158&45\\
-	3&14&162&48\\
-	4&15&163&50\\
-    \midrule
-    %\cmidrule{2-4}
-	平均&15&159.75&46.25\\
-	\bottomrule
+\toprule
+序号 & 年龄 & 身高 & 体重 \\
+\midrule
+001 & 15 & 156 & 42 \\
+002 & 16 & 158 & 45 \\
+003 & 14 & 162 & 48 \\
+004 & 15 & 163 & 50 \\
+\cmidrule{2-4}
+平均 & 15 & 159.75 & 46.25 \\
+\bottomrule
 \end{tabularx}
 \end{table}
 
-\clearpage
-某行业产量与生产费用的数据
-\begin{table}[htp!]
-\centering
-\caption{某行业产量与生产费用的数据}%\label{}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-\newcolumntype{Z}{!{\vline}@{\color{white}\vrule width \doublerulesep}!{\vrule}}%自定义列格式(双线)
-\begin{tabularx}{0.94\textwidth}{c|c|YZc|c|Y}\Xhline{0.9pt}
-	企业编号&	产量(台)&生产费用(万元)&企业编号&产量(台)&生产费用(万元)\\\Xcline{1-3}{0.6pt}\Xcline{4-6}{0.6pt}
-	1&	40&	130&7&	84&	165\\
-	2&	42&	150&8&	100&	170\\
-	3&	50&	155&9&	116&	167\\
-	4&	55&	140&10&	125&	180\\
-	5&	65&	150&11&	130&	175\\
-	6&	78&	154&12&	140&	185\\\Xhline{0.72pt}
-\end{tabularx}
-\end{table}
+% 某行业产量与生产费用的数据
+% \begin{table}[htp!]
+% \centering
+% \caption{某行业产量与生产费用的数据}%\label{}
+% \newcolumntype{Y}{>{\centering\arraybackslash}X}
+% \newcolumntype{Z}{!{\vline}@{\color{white}\vrule width \doublerulesep}!{\vrule}}%自定义列格式(双线)
+% \begin{tabularx}{0.94\textwidth}{c|c|YZc|c|Y}
+% \Xhline{0.9pt}
+% 企业编号&  产量(台)&生产费用(万元)&企业编号&产量(台)&生产费用(万元)\\\Xcline{1-3}{0.6pt}\Xcline{4-6}{0.6pt}
+% 1 & 40 & 130 & 7&  84&  165\\
+% 2 & 42 & 150 & 8&  100&  170\\
+% 3 & 50 & 155 & 9&  116&  167\\
+% 4 & 55 & 140 & 10&  125&  180\\
+% 5 & 65 & 150 & 11&  130&  175\\
+% 6 & 78 & 154 & 12&  140&  185\\\Xhline{0.72pt}
+% \end{tabularx}
+% \end{table}
 
 研究生数学建模2019年F题结果示例
 \begin{table}[htp!]
@@ -456,12 +467,12 @@ output result
 
 多图并排
 \begin{figure}[!htp]
-	\centering
-	\subfloat[Arabic numerals]{\includegraphics[width=0.4\textwidth]{image1}}\qquad
-	\subfloat[Arabic numerals]{\includegraphics[width=0.4\textwidth]{image2}} \\
-	\subfloat[Arabic numerals]{\includegraphics[width=0.4\textwidth]{image3}}\qquad
-	\subfloat[Arabic numerals]{\includegraphics[width=0.4\textwidth]{image4}}
-	\caption{多图示例}
+  \centering
+  \subfloat[Arabic numerals]{\includegraphics[width=0.4\textwidth]{image1}}\qquad
+  \subfloat[Arabic numerals]{\includegraphics[width=0.4\textwidth]{image2}} \\
+  \subfloat[Arabic numerals]{\includegraphics[width=0.4\textwidth]{image3}}\qquad
+  \subfloat[Arabic numerals]{\includegraphics[width=0.4\textwidth]{image4}}
+  \caption{多图示例}
 \end{figure}
 
 
