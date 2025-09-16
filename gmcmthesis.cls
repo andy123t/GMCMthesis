@@ -5,7 +5,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{gmcmthesis}[2023/09/19 v2.4 update by andy123t]
+\ProvidesClass{gmcmthesis}[2025/09/16 v2.4 update by andy123t]
 %% Inital Code
 \newif\if@gmcm@bwprint\@gmcm@bwprintfalse
 \newif\if@gmcm@preface\@gmcm@prefacetrue
@@ -93,8 +93,8 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 
 \lstnewenvironment{Matlab}[1]{
 \lstset{language=matlab,               % choose the language of the code
-  xleftmargin=20pt,
-  xrightmargin=20pt,
+  xleftmargin=10pt,
+  xrightmargin=10pt,
   frame=tlbr,framesep=4pt,framerule=0.5pt, % sets the frame style
   %frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20},
   basicstyle=\small\fontspec{Courier New},
@@ -116,8 +116,8 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 
 \lstnewenvironment{Python}[1]{
 \lstset{language=python,               % choose the language of the code
-  xleftmargin=20pt,
-  xrightmargin=20pt,
+  xleftmargin=10pt,
+  xrightmargin=10pt,
   frame=single,framesep=4pt,framerule=0.5pt, % sets the frame style
   %frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20},
   basicstyle=\small\ttfamily,          % sets font style for the code
