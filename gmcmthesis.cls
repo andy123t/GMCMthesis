@@ -448,7 +448,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
   \Xhline{1.2pt}\\
   \zihao{-2}\bfseries 参赛队号&\zihao{-2}\bfseries\gmcm@tokens@baominghao\\
   \Xhline{1.2pt}\\[-15pt]
-   \multirow{3}{*}{\zihao{-2}\bfseries 队员姓名}&\zihao{-2}\bfseries   1. \gmcm@tokens@membera\hfill\null\\
+   \multirow{4}{*}{\zihao{-2}\bfseries 队员姓名}&\zihao{-2}\bfseries   1. \gmcm@tokens@membera\hfill\null\\
    \cline{2-2}\\[-15pt]
                                &\zihao{-2}\bfseries 2. \gmcm@tokens@memberb\hfill\null\\
    \cline{2-2}\\[-15pt]
