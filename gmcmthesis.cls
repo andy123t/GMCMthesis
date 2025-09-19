@@ -447,11 +447,11 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
   \zihao{-2}\bfseries 学\qquad 校&\zihao{-2}\bfseries\gmcm@tokens@schoolname\\
   \Xhline{1.2pt}\\
   \zihao{-2}\bfseries 参赛队号&\zihao{-2}\bfseries\gmcm@tokens@baominghao\\
-  \Xhline{1.2pt}\\[-15pt]
-   \multirow{4}{*}{\zihao{-2}\bfseries 队员姓名}&\zihao{-2}\bfseries   1. \gmcm@tokens@membera\hfill\null\\
-   \cline{2-2}\\[-15pt]
+  \Xhline{1.2pt}\\[-25pt]
+   \multirow{3.4}{*}{\zihao{-2}\bfseries 队员姓名}&\zihao{-2}\bfseries   1. \gmcm@tokens@membera\hfill\null\\
+   \cline{2-2}\\[-25pt]
                                &\zihao{-2}\bfseries 2. \gmcm@tokens@memberb\hfill\null\\
-   \cline{2-2}\\[-15pt]
+   \cline{2-2}\\[-25pt]
                         &\zihao{-2}\bfseries 3.  \gmcm@tokens@memberc\hfill\null\\
    \Xhline{1.2pt}
   \end{tabularx}
