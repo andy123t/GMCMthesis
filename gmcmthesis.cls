@@ -5,7 +5,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{gmcmthesis}[2025/09/16 v2.4 update by andy123t]
+\ProvidesClass{gmcmthesis}[2025/09/20 v2.4 update by andy123t]
 %% Inital Code
 \newif\if@gmcm@bwprint\@gmcm@bwprintfalse
 \newif\if@gmcm@preface\@gmcm@prefacetrue
@@ -581,9 +581,13 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 %\newcommand\gmcm@ges@string@contents{“华为杯”第十五届全国研究生\par 数学建模竞赛}
 \newcommand\gmcm@ges@string@contents{\includegraphics{title}}
 
-\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
-\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
-\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+%\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+%\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+%\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
 
 % 字图与子标题
 % \RequirePackage{subcaption}
